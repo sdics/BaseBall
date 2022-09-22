@@ -1,0 +1,19 @@
+package site.metacoding.BaseBall.domain.playerout;
+
+import java.util.List;
+
+import site.metacoding.BaseBall.domain.player.Player;
+
+public interface PlayoutDao {
+	public void insert(Playerout playerout);
+
+	public List<Playerout> findAll();
+
+	public Playerout findById(Integer id);
+
+	public void update(Playerout playerout);
+
+	public void deleteById(Integer id);
+
+	public void updateByPlayeroutId(Integer id);
+}

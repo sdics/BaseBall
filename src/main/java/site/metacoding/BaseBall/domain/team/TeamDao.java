@@ -2,8 +2,7 @@ package site.metacoding.BaseBall.domain.team;
 
 import java.util.List;
 
-import site.metacoding.BaseBall.domain.stardium.Stardium;
-import site.metacoding.BaseBall.domain.stardium.StardiumDao;
+import site.metacoding.BaseBall.web.dto.response.TeamListDto;
 
 public interface TeamDao {
 	public void insert(Team team);
@@ -11,6 +10,8 @@ public interface TeamDao {
 	public List<Team> findAll();
 
 	public Team findById(Integer id);
+	
+	public List<TeamListDto> findAllPlusStadium();
 
 	public void update(Team team);
 

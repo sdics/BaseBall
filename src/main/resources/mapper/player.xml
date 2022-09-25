@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="site.metacoding.baseball.domain.player.PlayerDao">
+
+	<insert id="findAll">
+		INSERT INTO player(NAME, teamId, position, createdAt,
+		age)
+		VALUES(#{name}, #{teamId}, #{position}, NOW(), #{age})
+	</insert>
+
+
+	<select id="findAll"
+		resultType="site.metacoding.baseball.domain.player.Player">
+		SELECT * FROM player
+	</select>
+
+	<select id="findAllPlusTeam"
+		resultType="site.metacoding.baseball.web.dto.response.PlayerListDto">
+		SELECT p.id id, t.name teamName, p.position position,
+		p.name name, p.createdAt createdAt, p.age age,
+		FROM player p left OUTER
+		JOIN team t
+		On p.teamId = t.id
+	</select>
+
+	<select id="findById"
+		resultType="site.metacoding.baseball.domain.player.Player">
+		SELECT * FROM player WHERE id = #{id}
+	</select>
+
+	<delete id="deleteById">
+		DELETE FROM player WHERE id = #{id}
+	</delete>
+
+</mapper>

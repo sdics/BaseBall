@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.BaseBall.domain.team.TeamDao">
+
+	<insert id="insert">
+		INSERT INTO team(NAME, stardiumId, createdAt,
+		hometown)
+		VALUES(#{name}, #{stardiumId}, NOW(), #{hometown})
+	</insert>
+
+	<select id="findAll"
+		resultType="site.metacoding.BaseBall.domain.team.Team">
+		SELECT * FROM team
+	</select>
+
+	<select id="findAllPlusStardium"
+		resultType="site.metacoding.BaseBall.web.dto.response.TeamListDto">
+		SELECT t.id id, s.name stardiumName, t.name teamName,
+		t.createdAt createdAt
+		FROM team t INNER JOIN stardium s
+		ON t.stardiumId
+		= s.id
+	</select>
+
+	<select id="findById"
+		resultType="site.metacoding.BaseBall.domain.team.Team">
+		SELECT * FROM team WHERE id = #{id}
+	</select>
+
+	<delete id="deleteById">
+		DELETE FROM team WHERE id = #{id}
+	</delete>
+
+</mapper>

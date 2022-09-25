@@ -13,4 +13,8 @@ public class Playerout {
 	public String reason;
 	public String position;
 	public Timestamp createdate;
+	
+	public Playerout(String name) {
+		this.name = name;
+	}
 }

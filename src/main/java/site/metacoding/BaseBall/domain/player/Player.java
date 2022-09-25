@@ -7,8 +7,7 @@ import lombok.Setter;
 @Setter
 public class Player {
 	private Integer id;
-	private String playername;
+	private String name;
 	private Integer age;
 	private String position;
-	private String teamname;
 }

@@ -7,8 +7,7 @@ import lombok.Setter;
 @Setter
 public class Team {
 	public Integer id;
-	public String teamname;
+	public String name;
 	public Integer since;
-	public String stardiumname;
 	public String hometown;
 }

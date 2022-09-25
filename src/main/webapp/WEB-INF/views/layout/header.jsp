@@ -27,8 +27,8 @@
 				<ul class="navbar-nav">
 
 					<c:choose>
-							<li class="nav-item"><a class="nav-link" href="/">경기장 목록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/">경기장 등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/stardium">경기장 목록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/">팀 목록 </a></li>
 							<li class="nav-item"><a class="nav-link" href="/">팀 등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/">선수 목록</a></li>

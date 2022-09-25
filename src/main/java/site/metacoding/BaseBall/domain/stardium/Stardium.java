@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class Stardium {
 	public Integer id;
-	public String stariumname;
+	public String name;
 	public Integer since;
 	public String teamname;
 }
